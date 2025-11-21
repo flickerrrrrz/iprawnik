@@ -1,0 +1,53 @@
+# Credentials & Secrets
+SUPABASE_CREDENTIALS.md
+*CREDENTIALS*
+*SECRET*
+*.pem
+*.key
+
+# Environment Variables
+.env.local
+.env*.local
+*.env
+!.env.example
+
+# Snyk Security Extension - AI Rules (auto-generated)
+.windsurf/rules/snyk_rules.md
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+*.log
+
+# Next.js
+.next/
+out/
+build/
+dist/
+
+# Vercel
+.vercel
+
+# Supabase
+.branches
+.temp
+supabase/.branches
+supabase/.temp
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.tsbuildinfo
