@@ -8,12 +8,23 @@
 **Przeznaczenie:** Szybkie iteracje, debugowanie, testy
 
 **Stack:**
-- **Frontend:** Next.js dev server (port 3000) na VPS
+- **Frontend:** Next.js dev server na VPS
+  - Port: 3000
+  - URL: http://localhost:3000
+  - Hot-reload: ✅
 - **Backend/API:** Next.js API routes + Server Actions
 - **Database:** Supabase Local (Docker) na VPS
   - API: http://127.0.0.1:54321
   - Studio: http://127.0.0.1:54323
   - DB: postgresql://postgres:postgres@127.0.0.1:54322/postgres
+  - Mailpit: http://127.0.0.1:54324 (email testing)
+
+**Konfiguracja (.env.local):**
+```bash
+NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_ACJWlzQHlZjBrEguHvfOxg_3BJgxAaH
+DATABASE_URL=postgresql://postgres:postgres@127.0.0.1:54322/postgres
+```
 
 **Zalety:**
 - ⚡ Natychmiastowy hot-reload
@@ -38,10 +49,20 @@
   - Auto-deploy z GitHub (main branch)
   - Edge Functions
   - CDN globalny
+  - URL: https://prawnik-ai.vercel.app (lub custom domain)
 - **Database:** Supabase Cloud
   - Project ID: tskfjodbbnaozfmctjne
   - URL: https://tskfjodbbnaozfmctjne.supabase.co
   - Region: EU Central 1 (Frankfurt)
+
+**Konfiguracja (Vercel Environment Variables):**
+```bash
+NEXT_PUBLIC_SUPABASE_URL=https://tskfjodbbnaozfmctjne.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_wU-erO71HyX8SQweE_zdvg_08Ld_Abs
+SUPABASE_SECRET_KEY=sb_secret_YJsmhx2GuslKE5UkbZm7wE_qyvkXGez
+DATABASE_URL=postgresql://postgres:***@db.tskfjodbbnaozfmctjne.supabase.co:5432/postgres
+SUPABASE_POOLER_URL=postgresql://postgres.tskfjodbbnaozfmctjne:***@aws-1-eu-central-1.pooler.supabase.com:6543/postgres
+```
 
 **Zalety:**
 - 🚀 Automatyczne deploymenty
