@@ -12,10 +12,13 @@ We use two types of migrations:
 - **Naming:** `YYYYMMDDHHMMSS_description.sql`
 
 ### 2. **Local-Only Migrations** (`migrations/local/`)
-- Seed data for development
-- Test users and sample data
-- **NOT applied to production**
+- **Lokalizacja:** `/home/debian/projects/prawnik-ai/app-code/supabase/migrations/local/`
+- Seed data for development (test users, sample documents)
+- Development-specific triggers or functions
+- Mock data for testing
+- **NOT applied to production** (folder gitignored)
 - **Naming:** `local_YYYYMMDDHHMMSS_description.sql`
+- Applied manually on local Supabase instance only
 
 ---
 
@@ -65,7 +68,10 @@ psql $DATABASE_URL -f supabase/migrations/local/local_*.sql
 # Push universal migrations only
 supabase db push
 
-# local/ folder is gitignored for production
+# WAŻNE: local/ folder NIE jest wysyłany do produkcji
+# Dodaj do .gitignore jeśli nie ma:
+# supabase/migrations/local/*
+# !supabase/migrations/local/README.md
 ```
 
 ### Pull from Production
